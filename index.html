@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              body: "#1C1C1C",
+              secondary: "#FF9BD2",
+              accent: "#FF69B4",
+              dark: "#000000",
+              white: "#FFFFFF",
+            },
+            fontFamily: {
+              heading: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+      .card {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        visibility: hidden; /* Hide by default */
+      }
+      .card.exiting {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      .card.entering {
+        transform: translateX(100%);
+        opacity: 1;
+      }
+      .card.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible; /* Make active card visible */
+      }
+      audio {
+        display: none; /* Hides the audio element */
+      }
+    </style>
+  </head>
+  <body
+    class="flex justify-center items-center h-[100vh] bg-gradient-to-br from-body via-secondary to-dark"
+  >
+    <div class="card-container relative">
+      <!-- Cover -->
+      <div
+        class="card w-[400px] h-[600px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 shadow-lg p-4 gap-4 rounded-xl flex flex-col justify-center items-center"
+      >
+        <div class="w-full flex flex-col text-center justify-center h-full">
+          <h1 class="text-white text-4xl font-heading font-bold">
+            BLACKPINK BIRTHDAY CARD
+          </h1>
+          <p class="text-white mt-4 text-lg">Click Me</p>
+        </div>
+      </div>
+
+      <div
+        class="card flex flex-col w-[400px] h-[600px] bg-body shadow-lg p-4 gap-4 rounded-xl border-2 border-pink-500 absolute top-0"
+      >
+        <div class="w-full">
+          <img
+            class="w-full rounded-md border border-dark object-cover h-[280px]"
+            src="jisoo.jpg"
+            alt="Image"
+          />
+        </div>
+        <div class="w-full text-center">
+          <h1 class="text-secondary text-3xl font-heading font-bold text-white">
+            Happy Birthday Sooyaa!
+          </h1>
+          <p class="text-white p-4">
+            To our stunning, ever-charming Jisoo, you light up every room with
+            your warmth and humor. May your birthday be filled with laughter,
+            love, and unforgettable moments. Keep shining, queen!
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="card flex flex-col w-[400px] h-[600px] bg-body shadow-lg p-4 gap-4 rounded-xl border-2 border-pink-500 absolute top-0"
+      >
+        <div class="w-full">
+          <img
+            class="w-full rounded-md h-[280px] object-cover"
+            src="jennie.jpg"
+            alt="Image"
+          />
+        </div>
+        <div class="w-full text-center">
+          <h1 class="text-secondary text-3xl font-heading font-bold text-white">
+            Happy Birthday Ms.Jennie Kim!
+          </h1>
+          <p class="text-white p-4">
+            Happy Birthday to our fierce and fabulous Jennie! Your charisma and
+            passion inspire us all. Here's to another year of success, style,
+            and breaking boundaries. Stay iconic!
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="card flex flex-col w-[400px] h-[600px] bg-body shadow-lg p-4 gap-4 rounded-xl border-2 border-pink-500 absolute top-0"
+      >
+        <div class="w-full">
+          <img
+            class="w-full rounded-md object-cover h-[280px]"
+            src="lisa.jpg"
+            alt="Image"
+          />
+        </div>
+        <div class="w-full text-center">
+          <h1 class="text-secondary text-3xl font-heading font-bold text-white">
+            Happy Birthday lalisaa!
+          </h1>
+          <p class="text-white p-4">
+            To the dance machine, Lisa! Your talent and energy are unmatched. On
+            your special day, may your heart be as full as the love you give to
+            BLINKS. Keep being the unstoppable force that you are!
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="card flex flex-col w-[400px] h-[600px] bg-body shadow-lg p-4 gap-4 rounded-xl border-2 border-pink-500 absolute top-0"
+      >
+        <div class="w-full">
+          <img
+            class="w-full rounded-md object bg-cover h-[280px] object-cover"
+            src="rose.jpg"
+            alt="Image"
+          />
+        </div>
+        <div class="w-full text-center">
+          <h1 class="text-secondary text-3xl font-heading font-bold text-white">
+            Happy Birthday Rosee !
+          </h1>
+          <p class="text-white p-4">
+            To the voice of an angel, Rosé! Your music touches hearts all over
+            the world. May your birthday be as sweet and soulful as your
+            melodies. Keep pouring your heart into everything you do!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="hbdsong" src="hbdsong.mpeg" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
